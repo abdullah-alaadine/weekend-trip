@@ -30,7 +30,7 @@ form button{
     background-color: aquamarine;
     transition: 0.3s;
     border: 1px rgb(15, 48, 48) solid;
-}
+} 
 form button:hover{
     transform: translateY(7px);
     background-color: azure;
