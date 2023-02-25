@@ -29,11 +29,15 @@ form button{
     width: 10%;
     background-color: aquamarine;
     transition: 0.3s;
-    border: 1px rgb(0, 71, 71) solid;
+    border: 1px rgb(15, 48, 48) solid;
 }
 form button:hover{
     transform: translateY(7px);
     background-color: azure;
     color: rgb(0, 71, 71);
     border: none;
+}
+form input:focus{
+    border: 0px;
+    background-color: aquamarine;
 }
