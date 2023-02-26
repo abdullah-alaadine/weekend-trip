@@ -189,6 +189,6 @@ document.getElementById("ipGo").addEventListener("click", ()=> {
                 counter += (x[i] * 1);
             }
         }
-        document.getElementById("ip").textContent = `The sum of even numbers is ${counter}`;
+        document.getElementById("ip").textContent = `Your IP address: ${x} The sum of even numbers is ${counter}`;
     }
 }); 
