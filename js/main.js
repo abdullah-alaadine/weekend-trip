@@ -192,3 +192,16 @@ document.getElementById("ipGo").addEventListener("click", ()=> {
         document.getElementById("ip").textContent = `Your IP address: ${x} The sum of even numbers is ${counter}`;
     }
 }); 
+document.getElementById("locGo").addEventListener("click", ()=> {
+    if(navigator.geolocation){
+        console.log(99  )
+        navigator.geolocation.getCurrentPosition(success, failure);
+    }
+    function success(x){
+        document.getElementById("loc").innerHTML = "Latitude: " + x.coords.latitude + "<br>Longitude: " + x.coords.longitude;
+    }
+    function failure(x){
+        document.getElementById("loc").innerHTML = "Latitude: " + x.coords.latitude + "Longitude: " + x.coords.longitude;
+
+    }
+})
