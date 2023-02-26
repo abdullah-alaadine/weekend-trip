@@ -170,3 +170,25 @@ document.getElementById("courseGo").addEventListener("click", (e) => {
     document.getElementById("saved").textContent = "Saved!";
     setTimeout(()=> document.getElementById("saved").textContent = "", 2000)
 })
+let oneTime = true;
+document.addEventListener("scroll", e => {
+    if(scrollY > 2640 && scrollY < 2720 && oneTime){
+        alert("Welcome to our Dice Game :)");
+        oneTime = false;
+    }
+})
+
+document.getElementById("ipGo").addEventListener("click", ()=> {
+    fetch('https://api.ipify.org/').then(
+        r => r.text()
+    ).then(evenNums);
+    function evenNums(x){
+        let counter = 0;
+        for (let i = 0; i< x.length; i++){
+            if(!isNaN(x[i]) && (x[i] * 1) % 2==0){
+                counter += (x[i] * 1);
+            }
+        }
+        document.getElementById("ip").textContent = `The sum of even numbers is ${counter}`;
+    }
+}); 
