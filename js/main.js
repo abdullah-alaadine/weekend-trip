@@ -125,3 +125,11 @@ document.getElementById("primeGo").addEventListener("click", () => {
     str *= 1;
     str%2 == 0? document.getElementById("prime").textContent = "true": document.getElementById("prime").textContent = "false";
 });
+document.getElementById("reverseGo").addEventListener("click", () => {
+    const str = prompt("Enter the word here");
+    let reversedWord = "";
+    for (let i = str.length - 1; i >= 0; i--){
+        reversedWord += str[i];
+    }
+    document.getElementById("reverse").textContent = reversedWord;
+;})
