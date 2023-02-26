@@ -78,3 +78,40 @@ function palindrome(a, b, string){
     }
     return false;
 }
+
+const mergeSortGo = document.getElementById("mergeSortGo");
+mergeSortGo.addEventListener("click", (e) => {
+    const numbers = prompt("Add 10 numbers, make sure to add them separated with space, e.g. 10 32 53 932 -2 349 0 and so one");
+    const arr = numbers.split(" ");
+    mergeSort(arr);
+    
+})
+function mergeSort(arr){
+    if(arr.length <= 1) return;
+    let midpoint = Math.floor(arr.length/2);
+    let left = arr.splice(0,midpoint);
+    let right = arr.splice(midpoint);
+    mergeSort(left);
+    mergeSort(right);
+    let i = 0, j = 0, k = 0;
+    while(i< left.length && j < right.length){
+        if(left[i] <= right[j]){
+            arr[k] = left[i];
+            i++;
+        }else{
+            arr[k] = right[j];
+            j++;
+        }
+        k++;
+    }
+    while(i < left.length){
+        arr[k] = left[i];
+        i++;
+        k++;
+    }
+    while(j < right.length){
+        arr[k] = right[j];
+        j++;
+        k++;
+    }
+}
