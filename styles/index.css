@@ -124,3 +124,82 @@ body {
     margin: auto;
     height: 40vh;
 }
+.main{
+    background-color: #0066ff;
+    border: 1px #031a3b solid;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.holder{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+}
+.result:not(:first-child) {
+    position: absolute;
+    visibility: hidden;
+    left: 42%;
+}
+.dices{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.dice{
+    display: block;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    background-color: rgb(218, 13, 13);
+    border-radius: 20px;
+    display: grid;
+    margin: auto;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.circles {
+    height: 60%;
+    width: 60%;
+    background-color: wheat;
+    border-radius: 50%;
+}
+.roll{
+    width: 50%;
+    margin: 10px;
+}
+.roll-btn{
+    font-size: 20px !important;
+    position: relative !important;
+    bottom: 8vh !important;
+    color: #3083ff !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    padding: 4px !important;
+    background-color: #74a6f1 !important;
+    width: 100% !important;
+    transition: 0.3s !important;
+}
+.roll-btn:hover{
+    background-color: #eef2f8 !important;
+    transform: translateY(10px) !important;
+}
+.circles1:nth-child(2n + 1){
+    visibility: hidden;
+}
+.circles2:nth-child(2n){
+    visibility: hidden;
+}
+.dice-service{
+    height: 140vh;
+}
