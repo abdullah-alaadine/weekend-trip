@@ -29,11 +29,13 @@ form{
     position: relative;
     width: 80%;
     top: 40vh;
-    height: 30vh;
+    height: 40vh;
     margin: auto;
+    margin-top: 35vh;
+    margin-bottom: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 form div{

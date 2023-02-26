@@ -39,7 +39,8 @@ function validateUserDate(fName, lName, email, p1, p2){
         userData.lName = lName;
         userData.email = email;
         userData.p1 = p1;
-        userData.p2 = p2;``
+        userData.p2 = p2;
+        document.getElementById("signupForm").style.display = "none";
     }
 }
 function searchForCapitalLetters(str){
@@ -67,7 +68,6 @@ function enterPassAgain(){
     const passwordLast = document.signupForm.passwordLast;
     passwordFirst.value = "";
     passwordLast.value = "";
-
 }
 function palindrome(a, b, string){
     if(b <= a){
