@@ -7,34 +7,37 @@ function getUserInfo(e){
     const email = document.signupForm.email;
     const passwordFirst = document.signupForm.passwordFirst;
     const passwordLast = document.signupForm.passwordLast;
-    validateUserDate(fName, lName, email, passwordFirst, passwordLast);
+    validateUserDate(fName, lName, email, passwordFirst.value, passwordLast.value);
 }
 function validateUserDate(fName, lName, email, p1, p2){
     if(email.value.lastIndexOf(".") + 3 > email.value.length){
         alert("Please enter a valid email");
-        inputDataAgain();
+        enterEmailAgain();
         return;
     } else if(p1 != p2){
         alert("The passwords didn't match!");
-        inputDataAgain();
+        enterPassAgain();
         return;
     }else if(p1.length<8){
         alert("Your password should contain at least 8 characters");
-        inputDataAgain();
+        enterPassAgain();
         return;
     }else if(!searchForCapitalLetters(p1)){
         alert("Your password should contain at least ONE capital letter!");
-        inputDataAgain();
+        enterPassAgain();
         return;
-    }else if(!searchForSpecialCharacters()){
+    }
+    else if(!searchForSpecialCharacters(p1)){
         alert("Your password should contain at least ONE special character");
         inputDataAgain();
         return;
+    }else{
+        userData = {fName,lName, email, p1, p2};
     }
 }
 function searchForCapitalLetters(str){
     for (let i = 0; i < str.length; i++){
-        if(str.charCodeAt(i) >= 65 || str.charCodeAt(i) <= 90){
+        if(str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90){
             return true;
         }
     }
@@ -49,12 +52,15 @@ function searchForSpecialCharacters(str){
     }
     return false;
 }
-function inputDataAgain(){
-    fName.value = "";
-    lName.value = "";
-    email.value = "";
+function enterEmailAgain(){
+    document.signupForm.email.value = "";
+}
+function enterPassAgain(){
+    const passwordFirst = document.signupForm.passwordFirst;
+    const passwordLast = document.signupForm.passwordLast;
     passwordFirst.value = "";
     passwordLast.value = "";
+
 }
 function palindrome(a, b, string){
     if(b <= a){
