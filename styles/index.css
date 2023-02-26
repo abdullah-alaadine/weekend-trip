@@ -203,3 +203,16 @@ body {
 .dice-service{
     height: 140vh;
 }
+.last-btn{
+    border-radius: 10px;
+    width: 100px;
+    background-color: aquamarine;
+    transition: 0.3s;
+    border: 1px rgb(15, 48, 48) solid;   
+}
+.last-btn:hover{
+    transform: translateY(3px);
+    background-color: azure;
+    color: rgb(0, 71, 71);
+    border: none;   
+}
