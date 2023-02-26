@@ -69,12 +69,12 @@ function enterPassAgain(){
     passwordFirst.value = "";
     passwordLast.value = "";
 }
-function palindrome(a, b, string){
+function palindrome(a, b, word){
     if(b <= a){
         return true;
     }
-    if(string[a] === string[b]){
-        return palindrome(a + 1, b -1, string)
+    if(word[a] === word[b]){
+        return palindrome(a + 1, b - 1, word);
     }
     return false;
 }
@@ -115,3 +115,8 @@ function mergeSort(arr){
         k++;
     }
 }
+
+document.getElementById("palindromeGo").addEventListener("click", () => {
+    const str = prompt("Enter the string");
+    palindrome(0, str.length - 1, str)? document.getElementById("palindrome").textContent = "true": document.getElementById("palindrome").textContent = "false";
+});
