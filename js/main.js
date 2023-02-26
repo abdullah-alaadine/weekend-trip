@@ -29,10 +29,17 @@ function validateUserDate(fName, lName, email, p1, p2){
     }
     else if(!searchForSpecialCharacters(p1)){
         alert("Your password should contain at least ONE special character");
-        inputDataAgain();
+        enterPassAgain();
+        return;
+    }else if(!fName.value || !lName.value ){
+        alert("Please enter you name");
         return;
     }else{
-        userData = {fName,lName, email, p1, p2};
+        userData.fName = fName;
+        userData.lName = lName;
+        userData.email = email;
+        userData.p1 = p1;
+        userData.p2 = p2;``
     }
 }
 function searchForCapitalLetters(str){
