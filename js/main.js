@@ -148,3 +148,25 @@ document.getElementById("bananaGo").addEventListener("click", () => {
     str += "ay";
     document.getElementById("banana").textContent = str;
 });
+class Course {
+    constructor(name, cost, category, description, outline){
+        this.name = name;
+        this.cost = cost;
+        this.category = category;
+        this.description = description;
+        this.outline = outline;
+    }
+}
+const coursesInfo =[];
+document.getElementById("courseGo").addEventListener("click", (e) => {
+    e.preventDefault();
+    const oneCourse = new Course(document.course.name.value, document.course.cost.value, document.course.category.value, document.course.description.value, document.course.outline.value);
+    coursesInfo.push(oneCourse);
+    document.course.name.value = "";
+    document.course.cost.value = "";
+    document.course.category.value = "";
+    document.course.description.value = "";
+    document.course.outline.value = "";
+    document.getElementById("saved").textContent = "Saved!";
+    setTimeout(()=> document.getElementById("saved").textContent = "", 2000)
+})

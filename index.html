@@ -39,7 +39,7 @@
             <input type="email" id="email" name="email" required placeholder="e.g. johndoe@gmail.com">
         </div>  
         <div class="form-field">
-            <label for="password-first"> Password: </label>
+        <label for="password-first"> Password: </label>
             <input type="text" id="password-first" name="passwordFirst" required placeholder="e.g. jOhn%doe">
         </div>
         <div class="form-field">
@@ -95,7 +95,33 @@
                 <p id="banana"></p>
             </div>
         </div>
-        <h2> Course </h2>
+        <div class="service">
+            <h2 class="service-inner">Enter your courses info to save them</h2>
+            <form class="course" name="course">
+                <div>
+                    <label for="name">Course Name</label>
+                    <input id="name" name="name" type="text">
+                </div>
+                <div>
+                    <label for="cost">Course Cost</label>
+                    <input id="cost" name="cost" type="number">
+                </div>
+                <div>
+                    <label for="category">Course Category</label>
+                    <input id="category" name="category" type="text">
+                </div>
+                <div>
+                    <label for="description">Course description</label>
+                    <input id="description" name="description" type="text">
+                </div>
+                <div>
+                    <label for="outline">Course outline</label>
+                    <input id="outline" name="outline" type="text">
+                </div>
+                <button id="courseGo">Submit</button>
+                <p id="saved"></p>
+            </form>
+        </div>
         <h2> animations </h2>
         <h2> Location </h2>
         <h2> IP address </h2>
