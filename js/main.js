@@ -132,4 +132,19 @@ document.getElementById("reverseGo").addEventListener("click", () => {
         reversedWord += str[i];
     }
     document.getElementById("reverse").textContent = reversedWord;
-;})
+});
+document.getElementById("bananaGo").addEventListener("click", () => {
+    let str = prompt("Enter the string here");
+    const vowels = ["a", "e", "i", "o", "u"];
+    let consonants = "";
+    for (let i = 0; i < str.length; i++) {
+        if(vowels.includes(str[i])){
+            break;
+        }
+        consonants += str[i];
+    }
+    str = str.slice(consonants.length);
+    str += consonants;
+    str += "ay";
+    document.getElementById("banana").textContent = str;
+});
