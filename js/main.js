@@ -120,3 +120,8 @@ document.getElementById("palindromeGo").addEventListener("click", () => {
     const str = prompt("Enter the string");
     palindrome(0, str.length - 1, str)? document.getElementById("palindrome").textContent = "true": document.getElementById("palindrome").textContent = "false";
 });
+document.getElementById("primeGo").addEventListener("click", () => {
+    let str = prompt("Enter the date here, make sure to enter the date like '1022000' ");
+    str *= 1;
+    str%2 == 0? document.getElementById("prime").textContent = "true": document.getElementById("prime").textContent = "false";
+});
