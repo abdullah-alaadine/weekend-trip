@@ -41,6 +41,10 @@ function validateUserDate(fName, lName, email, p1, p2){
         userData.p1 = p1;
         userData.p2 = p2;
         document.getElementById("signupForm").style.display = "none";
+        document.getElementById("lastPart").style.display = "flex";
+        document.getElementById("lastPart").style.position = "relative";
+        document.getElementById("lastPart").style.top = "100vh";
+        
     }
 }
 function searchForCapitalLetters(str){
