@@ -1,5 +1,6 @@
 document.getElementById("signup").addEventListener("click", getUserInfo);
 const userData = {};
+let userDataJSONObject;
 function getUserInfo(e){
     e.preventDefault();
     const fName = document.signupForm.fName;
@@ -35,15 +36,16 @@ function validateUserDate(fName, lName, email, p1, p2){
         alert("Please enter you name");
         return;
     }else{
-        userData.fName = fName;
-        userData.lName = lName;
-        userData.email = email;
-        userData.p1 = p1;
-        userData.p2 = p2;
+        userData.fName = fName.value;
+        userData.lName = lName.value;
+        userData.email = email.value;
+        userData.p1 = p1.value;
+        userData.p2 = p2.value;
         document.getElementById("signupForm").style.display = "none";
         document.getElementById("lastPart").style.display = "flex";
         document.getElementById("lastPart").style.position = "relative";
         document.getElementById("lastPart").style.top = "100vh";
+        userDataJSONObject = JSON.stringify(userData);
     }
 }
 function searchForCapitalLetters(str){
@@ -130,10 +132,6 @@ document.getElementById("primeGo").addEventListener("click", () => {
 });
 document.getElementById("reverseGo").addEventListener("click", () => {
     const str = prompt("Enter the word here");
-    // let reversedWord = "";
-    // for (let i = str.length - 1; i >= 0; i--){
-    //     reversedWord += str[i];
-    // }
     let numbers = [];
     for(let i = 0; i < str.length; i++){
         if(!isNaN(str[i])){
