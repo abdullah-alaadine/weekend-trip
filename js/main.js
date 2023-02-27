@@ -44,7 +44,6 @@ function validateUserDate(fName, lName, email, p1, p2){
         document.getElementById("lastPart").style.display = "flex";
         document.getElementById("lastPart").style.position = "relative";
         document.getElementById("lastPart").style.top = "100vh";
-        
     }
 }
 function searchForCapitalLetters(str){
@@ -131,11 +130,27 @@ document.getElementById("primeGo").addEventListener("click", () => {
 });
 document.getElementById("reverseGo").addEventListener("click", () => {
     const str = prompt("Enter the word here");
-    let reversedWord = "";
-    for (let i = str.length - 1; i >= 0; i--){
-        reversedWord += str[i];
+    // let reversedWord = "";
+    // for (let i = str.length - 1; i >= 0; i--){
+    //     reversedWord += str[i];
+    // }
+    let numbers = [];
+    for(let i = 0; i < str.length; i++){
+        if(!isNaN(str[i])){
+            numbers.push(str[i]);
+        }
     }
-    document.getElementById("reverse").textContent = reversedWord;
+    numbers.reverse();
+    let j = 0;
+    const strArr = str.split("");
+    for(let i = 0; i < strArr.length; i++){
+        if(!isNaN(strArr[i])){
+            strArr[i] = numbers[j];
+            j++;
+        }
+    }
+    const result = strArr.join(",");
+    document.getElementById("reverse").textContent = result;
 });
 document.getElementById("bananaGo").addEventListener("click", () => {
     let str = prompt("Enter the string here");
